@@ -21,13 +21,13 @@
                 <div class="col-md-6">
                   <div class="radio margin-bottom-15">
                     <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                      <input type="radio" name="status" id="status1" value="1" checked>
                       	显示
                     </label>
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      <input type="radio" name="status" id="status2" value="2">
                       	隐藏
                     </label>
                   </div>               
@@ -49,16 +49,17 @@
               <div class="row">
                 <div class="col-md-12 margin-bottom-15">
                   <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> 普通
+                    <input type="radio" name="type" id="type1" value="1" checked> 普通
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 置顶
+                    <input type="radio" name="type" id="type2" value="2"> 置顶
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 重要
+                    <input type="radio" name="type" id="type3" value="3"> 重要
                   </label>                    
-                </div>                  
+                </div>                
               </div>
+
 			  <div class="row templatemo-form-buttons">
                 <div class="col-md-12">
                   <button type="button" onclick="submitForm()" class="btn btn-primary">确定</button>

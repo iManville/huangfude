@@ -1,5 +1,7 @@
 package com.huangfude.admin.article;
 
+import java.util.Date;
+
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
 
@@ -9,6 +11,8 @@ import com.jfinal.core.Controller;
  */
 @Before(ArticleInterceptor.class)
 public class ArticleController extends Controller {
+	
+	java.text.DateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
 	
 	public void index() {
 		setAttr("articlePage", Article.me.paginate(getParaToInt(0, 1), 10));
@@ -24,6 +28,7 @@ public class ArticleController extends Controller {
 		article.set("folder_id", getParaToInt("folder_id"));
 		article.set("title", getPara("title"));
 		article.set("content", getPara("content"));
+		article.set("publish_time", format.format(new Date()));
 		
 		article.save();
 		redirect("/admin/article");

@@ -24,7 +24,6 @@
             <li class="active">文章管理界面</li>
           </ol>
           <h1>文章管理界面 -  创建 </h1>
-		  <p class="margin-bottom-15">Here goes another form and form controls.</p>
           
           <%@ include file="/admin/article/_form.jsp" %>
           
