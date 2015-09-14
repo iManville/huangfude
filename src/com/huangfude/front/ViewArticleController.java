@@ -9,7 +9,7 @@ import com.jfinal.core.Controller;
 public class ViewArticleController extends Controller {
 	public void index() {
 		setAttr("article", Article.me.findById(getParaToInt()));
-		render("viewArticle.jsp");
+		render("view_article.jsp");
 	}
 }
 

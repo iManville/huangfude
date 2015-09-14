@@ -36,7 +36,7 @@ public class HfdConfig extends JFinalConfig {
 	 */
 	public void configRoute(Routes me) {
 		me.add("/", IndexController.class, "/front");	// 第三个参数为该Controller的视图存放路径
-		me.add("/viewArticle", ViewArticleController.class,"/front");
+		me.add("/view_article", ViewArticleController.class,"/front");
 		
 		me.add("/admin", AdminController.class); 		// 第三个参数省略时默认与第一个参数值相同，在此即为 "/admin"
 		me.add("/admin/article",ArticleController.class);
