@@ -19,7 +19,7 @@
 					<!-- Post -->
 						<article class="box post post-excerpt">
 							<header>
-								<h2><a href="/viewArticle/${article.id}">${article.title}</a></h2>
+								<h2><a href="/view_article/${article.id}">${article.title}</a></h2>
 							</header>
 							<div class="info">
 								<span class="date"><span class="month">Jul</span> <span class="day">14</span><span class="year">2015</span></span>
