@@ -3,6 +3,8 @@ package com.huangfude.common;
 import com.huangfude.admin.AdminController;
 import com.huangfude.admin.article.Article;
 import com.huangfude.admin.article.ArticleController;
+import com.huangfude.admin.folder.Folder;
+import com.huangfude.admin.folder.FolderController;
 import com.huangfude.front.IndexController;
 import com.huangfude.front.ViewArticleController;
 import com.jfinal.config.Constants;
@@ -40,6 +42,7 @@ public class HfdConfig extends JFinalConfig {
 		
 		me.add("/admin", AdminController.class); 		// 第三个参数省略时默认与第一个参数值相同，在此即为 "/admin"
 		me.add("/admin/article",ArticleController.class);
+		me.add("/admin/folder",FolderController.class);
 		
 	}
 	
@@ -55,6 +58,7 @@ public class HfdConfig extends JFinalConfig {
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
 		arp.addMapping("article", Article.class); // 映射article 表到 Article模型
+		arp.addMapping("folder", Folder.class); // 映射article 表到 Folder模型
 	}
 	
 	/**

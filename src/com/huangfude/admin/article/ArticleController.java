@@ -45,14 +45,15 @@ public class ArticleController extends Controller {
 		article.set("folder_id", getParaToInt("folder_id"));
 		article.set("title", getPara("title"));
 		article.set("content", getPara("content"));
+		article.set("update_time", format.format(new Date()));
 		
 		article.update();
-		redirect("/admin/artcile");
+		redirect("/admin/article");
 	}
 	
 	public void delete() {
 		Article.me.deleteById(getParaToInt());
-		redirect("/blog");
+		redirect("/admin/article");
 	}
 }
 

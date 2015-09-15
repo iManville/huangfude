@@ -5,7 +5,7 @@
 
 	<!-- Logo -->
 	<h1 id="logo">
-		<a href="#">STRIPED</a>
+		<a href="http://www.huangfude.com/">黄复得</a>
 	</h1>
 
 	<!-- Nav -->

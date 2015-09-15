@@ -16,7 +16,7 @@
             </a>
             <ul class="templatemo-submenu">
               <li class="active"><a href="/admin/article">文章管理</a></li>
-              <li><a href="#">Pellentesque</a></li>
+              <li><a href="/admin/folder">目录管理</a></li>
               <li><a href="#">Congue</a></li>
             </ul>
           </li>
