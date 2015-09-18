@@ -60,4 +60,21 @@ CREATE TABLE tags
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='标签';
 
 
+/**
+ * 用户
+ */
+drop table if exists user;
+CREATE TABLE user
+(
+  id int(11) not null auto_increment comment 'id',
+  username varchar(32) default '' comment '帐户',
+  password varchar(32) default '' comment '密码',
+  name varchar(32) default '' comment '昵称',
+  create_time  varchar(64) DEFAULT NULL COMMENT '创建时间',
+  create_id  int(11) DEFAULT 0 COMMENT '创建者',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户';
+
+
+
 
