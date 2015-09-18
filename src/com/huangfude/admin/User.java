@@ -3,7 +3,6 @@ package com.huangfude.admin;
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
 
-import java.util.List;
 
 /**
  * User model.
@@ -39,7 +38,7 @@ public class User extends Model<User> {
 	 */
 	public User userLogin(String username,String password){
 		String sql = "select * from user where username=? and password=?";
-		User user = User.me.findFirst(sql,username,password);
+		User user = User.me.findFirst(sql, new Object[]{username,password});
 		return user;
 
 	}

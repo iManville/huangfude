@@ -18,7 +18,7 @@
 			            </div>   
 		          </div>
           <div class="template-page-wrapper">
-      <form class="form-horizontal templatemo-signin-form" role="form" action="/login" method="post">
+      <form class="form-horizontal templatemo-signin-form" role="form" action="/admin/login" method="post">
         <div class="form-group">
             <div class="col-md-12">
                 <label for="username" class="col-sm-2 control-label">Username</label>

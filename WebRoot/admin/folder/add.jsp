@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <title>目录管理-创建</title>
   <meta name="viewport" content="width=device-width">        
   <link rel="stylesheet" href="/admin/css/templatemo_main.css">
   
