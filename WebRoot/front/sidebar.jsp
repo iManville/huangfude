@@ -11,10 +11,9 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul>
-			<li class="current"><a href="#">Latest Post</a></li>
-			<li><a href="#">Archives</a></li>
-			<li><a href="#">About Me</a></li>
-			<li><a href="#">Contact Me</a></li>
+			<li class="current"><a href="#">技术</a></li>
+			<li><a href="#">所有文章列表</a></li>
+			<li><a href="#">关于我</a></li>
 		</ul>
 	</nav>
 
@@ -29,9 +28,8 @@
 	<section class="box text-style1">
 		<div class="inner">
 			<p>
-				<strong>Striped:</strong> A free and fully responsive HTML5 site
-				template designed by  <a
-					href="http://html5up.net/">HTML5 UP</a>
+				<strong>黄复得：</strong> 一个程序员的独白。  <a
+					href="https://github.com/imanville">Fork me on GitHub</a>
 			</p>
 		</div>
 	</section>
@@ -39,14 +37,12 @@
 	<!-- Recent Posts -->
 	<section class="box recent-posts">
 		<header>
-			<h2>Recent Posts</h2>
+			<h2>标&nbsp;&nbsp;签</h2>
 		</header>
 		<ul>
-			<li><a href="#">Lorem ipsum dolor</a></li>
-			<li><a href="#">Feugiat nisl aliquam</a></li>
-			<li><a href="#">Sed dolore magna</a></li>
-			<li><a href="#">Malesuada commodo</a></li>
-			<li><a href="#">Ipsum metus nullam</a></li>
+			<li><a href="#">Java</a></li>
+			<li><a href="#">C</a></li>
+			<li><a href="#">Golang</a></li>
 		</ul>
 	</section>
 

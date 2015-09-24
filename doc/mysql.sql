@@ -29,7 +29,7 @@ CREATE TABLE article
   content text comment '文章内容', 
   count_view int(11) default '0' comment '浏览数',
   count_comment int(11) default '0' comment '评论数',
-  type  int(11) default '1' comment '类型//radio/1,正常,2,图文',
+  type  int(11) default '1' comment '类型//radio/1,原创,2,转载',
   status varchar(20) default '1' comment '状态//radio/2,隐藏,1,显示',
   is_comment varchar(20) default '1' comment '是否评论//radio/2,否,1,是',
   sort  int(11) default '1' comment '排序',

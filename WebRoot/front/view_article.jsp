@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Huangfude</title>
+	<title>${article.title} - 黄复得</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/front/assets/css/main.css" />
+		<%@ include file="/common/syntaxhighlighter.jsp"%>
 	</head>
 	<body>
 	
@@ -21,13 +23,17 @@
 								<h2><a href="/viewArticle/${article.id}">${article.title}</a></h2>
 							</header>
 							<div class="info">
-								<span class="date"><span class="month">Jul</span> <span class="day">14</span><span class="year">2015</span></span>
-								<!--
-									Note: You can change the number of list items in "stats" to whatever you want.
-								-->
-								<ul class="stats">								
-									
-									<li><a href="#" class="icon fa-heart">原创</a></li>
+								<c:set var="dateParts" value="${fn:split(article.publish_time, '-')}" />
+								<span class="date"><span class="month">${dateParts[1]}</span> <span class="day">${dateParts[2]}</span> <span class="year">${dateParts[0]}</span></span>
+								<ul class="stats">												
+									<li>
+									<c:if test="${article.type==1}">
+									<span class="icon fa-heart">原创</span>
+									</c:if>
+									<c:if test="${article.type==2}">
+									<span class="icon fa-comment">转载</span>
+									</c:if>
+									</li>
 								</ul>
 								
 							</div>
