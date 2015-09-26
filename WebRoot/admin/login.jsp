@@ -7,7 +7,7 @@
   <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
   <title>后台管理 - 用户登录</title>
   <meta name="viewport" content="width=device-width">        
-  <link rel="stylesheet" href="css/templatemo_main.css">
+  <link rel="stylesheet" href="/admin/css/templatemo_main.css">
 </head>
 <body>
   

@@ -47,18 +47,11 @@
 					</c:forEach>
 
 					<!-- Pagination -->
-						<div class="pagination">
-							<!--<a href="#" class="button previous">Previous Page</a>-->
-							<div class="pages">
-								<a href="#" class="active">1</a>
-								<a href="#">2</a>
-								<a href="#">3</a>
-								<a href="#">4</a>
-								<span>&hellip;</span>
-								<a href="#">20</a>
-							</div>
-							<a href="#" class="button next">Next Page</a>
-						</div>
+						<c:set var="currentPage" value="${articlePage.pageNumber}" />
+						<c:set var="totalPage" value="${articlePage.totalPage}" />
+						<c:set var="actionUrl" value="/admin/article" />
+						<c:set var="urlParas" value="" />
+						<%@ include file="/front/paginate.jsp"%>
 
 				</div>
 			</div>
