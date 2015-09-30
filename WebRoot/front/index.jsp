@@ -38,18 +38,23 @@
 								</ul>
 								
 							</div>
-
-							<p>
-								${article.content}
-							</p>
-
+							
+							<c:choose>  
+							    <c:when test="${fn:length(article.content) > 500}">  
+							        ${fn:substring(article.content, 0, 500)}......
+							    </c:when>  
+							   <c:otherwise>  
+							      	${article.content}
+							    </c:otherwise>  
+							</c:choose>  
+							
 						</article>
 					</c:forEach>
 
 					<!-- Pagination -->
 						<c:set var="currentPage" value="${articlePage.pageNumber}" />
 						<c:set var="totalPage" value="${articlePage.totalPage}" />
-						<c:set var="actionUrl" value="/admin/article" />
+						<c:set var="actionUrl" value="/" />
 						<c:set var="urlParas" value="" />
 						<%@ include file="/front/paginate.jsp"%>
 

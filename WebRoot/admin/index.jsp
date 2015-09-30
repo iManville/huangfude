@@ -23,7 +23,7 @@
             <li class="active">Overview</li>
             <li><a href="sign-in.html">Sign In Form</a></li>
           </ol>
-          <h1>Dashboard</h1>
+          <h1>一些样式示例</h1>
           <p>Dashboard is <a rel="nofollow" href="index.html">free admin template</a> for everyone. Credits go to <a href="http://chartjs.org">Chart JS</a>, <a href="http://getbootstrap.com">Bootstrap</a>, and <a href="http://jqvmap.com">JQVMap</a>. templatemo provides <a href="#">free website templates</a> that can be used for any purpose. Morbi id nisi enim. Ut congue interdum pharetra facilisi. Aenean consectetur pellentesque mauris nec ornare. Nam tortor just, condimentum.</p>
 
           <div class="margin-bottom-30">

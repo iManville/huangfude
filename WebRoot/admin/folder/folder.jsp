@@ -18,8 +18,8 @@
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
           <ol class="breadcrumb">
-            <li><a href="index.html">Admin Panel</a></li>
-            <li><a href="#">Manage Users</a></li>
+            <li><a href="/admin">后台首页</a></li>
+            <li><a href="/admin/folder">目录管理管理</a></li>
             <li class="active">目录管理界面</li>
           </ol>
           <h1>目录管理界面</h1>
@@ -27,9 +27,7 @@
           <div class="row margin-bottom-30">
             <div class="col-md-12">
               <ul class="nav nav-pills">
-                <li class="active"><a href="/admin/folder/add">新建 <span class="badge">42</span></a></li>
-                <li><a href="#">Active Users <span class="badge">107</span></a></li>
-                <li><a href="#">Expired Users <span class="badge">3</span></a></li>
+                <li class="active"><a href="/admin/folder/add">新建 目录</a></li>
               </ul>          
             </div>
           </div> 

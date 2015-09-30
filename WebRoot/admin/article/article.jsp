@@ -18,8 +18,8 @@
     <div class="templatemo-content-wrapper">
         <div class="templatemo-content">
           <ol class="breadcrumb">
-            <li><a href="index.html">Admin Panel</a></li>
-            <li><a href="#">Manage Users</a></li>
+            <li><a href="/admin">后台首页</a></li>
+            <li><a href="/admin/article">文章管理</a></li>
             <li class="active">文章管理界面</li>
           </ol>
           <h1>文章管理界面</h1>
@@ -27,9 +27,7 @@
           <div class="row margin-bottom-30">
             <div class="col-md-12">
               <ul class="nav nav-pills">
-                <li class="active"><a href="/admin/article/add">新建 <span class="badge">42</span></a></li>
-                <li><a href="#">Active Users <span class="badge">107</span></a></li>
-                <li><a href="#">Expired Users <span class="badge">3</span></a></li>
+                <li class="active"><a href="/admin/article/add">新建文章</a></li>
               </ul>          
             </div>
           </div> 
@@ -80,15 +78,13 @@
                 </table>
               </div>
 			  
-              <ul class="pagination pull-right">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">4 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>  
+			  <!-- Pagination -->
+				<c:set var="currentPage" value="${articlePage.pageNumber}" />
+				<c:set var="totalPage" value="${articlePage.totalPage}" />
+				<c:set var="actionUrl" value="/admin/article/" />
+				<c:set var="urlParas" value="" />
+				<%@ include file="/admin/paginate.jsp"%>
+						
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ CREATE TABLE article
   id int(11) not null auto_increment comment 'id',
   folder_id integer default 1 comment '目录id',
   title varchar(200) default '' comment '文章标题',
-  content text comment '文章内容', 
+  content longtext comment '文章内容', 
   count_view int(11) default '0' comment '浏览数',
   count_comment int(11) default '0' comment '评论数',
   type  int(11) default '1' comment '类型//radio/1,原创,2,转载',

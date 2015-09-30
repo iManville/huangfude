@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<form role="form" id="templatemo-preferences-form">	
+		<form role="form" id="templatemo-preferences-form" method="post" >	
 			<div class="row">
 				<div class="col-md-6 margin-bottom-15">
                     <label for="name" class="control-label">名称</label>

@@ -20,7 +20,7 @@
 					<!-- Post -->
 						<article class="box post post-excerpt">
 							<header>
-								<h2><a href="/viewArticle/${article.id}">${article.title}</a></h2>
+								<h2><a href="/view_article/${article.id}">${article.title}</a></h2>
 							</header>
 							<div class="info">
 								<c:set var="dateParts" value="${fn:split(article.publish_time, '-')}" />
