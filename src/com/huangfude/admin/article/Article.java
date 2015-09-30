@@ -1,5 +1,8 @@
 package com.huangfude.admin.article;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.jfinal.plugin.activerecord.Model;
 import com.jfinal.plugin.activerecord.Page;
 
@@ -42,4 +45,19 @@ public class Article extends Model<Article> {
 		
 		return paginate(pageNumber, pageSize, "select *", "from article order by publish_time desc");
 	}
+	/**
+	 * 用于前台，显示截取内容
+	 */
+	public Page<Article> viewPaginate(int pageNumber, int pageSize) {
+		Page<Article> page = paginate(pageNumber, pageSize, "select *", "from article order by publish_time desc");
+		List<Article> articleList = new ArrayList<Article>();
+		for (Article article : page.getList()){
+			String content = article.get("content");
+			//removeHTML
+			article.set("content", content.replaceAll("<[^>]*>", " "));
+			articleList.add(article);
+		}
+		return new Page<Article>(articleList,page.getPageNumber(),page.getPageSize(),page.getTotalPage(),page.getTotalRow());
+	}
+	
 }

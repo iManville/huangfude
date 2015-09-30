@@ -8,7 +8,7 @@ import com.jfinal.core.Controller;
  */
 public class IndexController extends Controller {
 	public void index() {
-		setAttr("articlePage", Article.me.paginate(getParaToInt(0, 1), 10));
+		setAttr("articlePage", Article.me.viewPaginate(getParaToInt(0, 1), 10));
 		render("index.jsp");
 	}
 }
