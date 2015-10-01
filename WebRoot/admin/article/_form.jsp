@@ -21,13 +21,13 @@
                 <div class="col-md-6">
                   <div class="radio margin-bottom-15">
                     <label>
-                      <input type="radio" name="status" id="status1" value="1" checked>
+                      <input type="radio" name="status" value="1" <c:if test="${article.status==1||article.status==null}">checked</c:if>>
                       	显示
                     </label>
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="status" id="status2" value="2">
+                      <input type="radio" name="status" value="2" <c:if test="${article.status==2}">checked</c:if>>
                       	隐藏
                     </label>
                   </div>               
@@ -49,10 +49,10 @@
               <div class="row">
                 <div class="col-md-12 margin-bottom-15">
                   <label class="radio-inline">
-                    <input type="radio" name="type" id="type1" value="1" checked> 原创
+                    <input type="radio" name="type" value="1" <c:if test="${article.type==1||article.type==null}">checked</c:if>> 原创
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="type" id="type2" value="2"> 转载
+                    <input type="radio" name="type" value="2" <c:if test="${article.type==2}">checked</c:if>> 转载
                   </label>                 
                 </div>                
               </div>
