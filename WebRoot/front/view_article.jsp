@@ -42,8 +42,25 @@
 								${article.content}
 							</p>
 
+							<!-- JiaThis Button BEGIN -->
+							<div class="jiathis_style_24x24">
+								<a class="jiathis_button_qzone"></a>
+								<a class="jiathis_button_tsina"></a>
+								<a class="jiathis_button_tqq"></a>
+								<a class="jiathis_button_weixin"></a>
+								<a class="jiathis_button_renren"></a>
+								<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+							</div>
+							<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+							<!-- JiaThis Button END -->
 						</article>
-
+						
+						<c:if test="${last_id!=''}">
+						<p><b>上一篇：</b><a href="/view_article/${last_id}">${last_title}</a></p>
+						</c:if>
+						<c:if test="${next_id!=''}">
+						<p><b>下一篇：</b><a href="/view_article/${next_id}">${next_title}</a></p>
+						</c:if>
 
 
 				</div>

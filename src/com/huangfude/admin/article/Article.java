@@ -43,13 +43,13 @@ public class Article extends Model<Article> {
 	 */
 	public Page<Article> paginate(int pageNumber, int pageSize) {
 		
-		return paginate(pageNumber, pageSize, "select *", "from article order by publish_time desc");
+		return paginate(pageNumber, pageSize, "select *", "from article order by id desc");
 	}
 	/**
 	 * 用于前台，显示截取内容
 	 */
 	public Page<Article> viewPaginate(int pageNumber, int pageSize) {
-		Page<Article> page = paginate(pageNumber, pageSize, "select *", "from article order by publish_time desc");
+		Page<Article> page = paginate(pageNumber, pageSize, "select *", "from article order by id desc");
 		List<Article> articleList = new ArrayList<Article>();
 		for (Article article : page.getList()){
 			String content = article.get("content");
@@ -58,6 +58,22 @@ public class Article extends Model<Article> {
 			articleList.add(article);
 		}
 		return new Page<Article>(articleList,page.getPageNumber(),page.getPageSize(),page.getTotalPage(),page.getTotalRow());
+	}
+
+	/**
+	 * 上一篇
+	 */
+	public Article getLastArticle(int article_id, int folder_id) {
+		String sql = "select * from article where id = (select max(id) from article where id < ? and folder_id = ?)";
+		return (Article)Article.me.findFirst(sql,new Object[]{article_id,folder_id});
+	}
+
+	/**
+	 * 下一篇
+	 */
+	public Article getNextArticle(int article_id, int folder_id) {
+		String sql = "select * from article where id = (select min(id) from article where id > ? and folder_id = ?)";
+		return (Article)Article.me.findFirst(sql,new Object[]{article_id,folder_id});
 	}
 	
 }
