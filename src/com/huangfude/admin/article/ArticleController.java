@@ -28,6 +28,8 @@ public class ArticleController extends Controller {
 		article.set("folder_id", getParaToInt("folder_id"));
 		article.set("title", getPara("title"));
 		article.set("content", getPara("content"));
+		article.set("status",getParaToInt("status"));
+		article.set("type", getParaToInt("type"));
 		article.set("publish_time", format.format(new Date()));
 		
 		article.save();
@@ -45,6 +47,8 @@ public class ArticleController extends Controller {
 		article.set("folder_id", getParaToInt("folder_id"));
 		article.set("title", getPara("title"));
 		article.set("content", getPara("content"));
+		article.set("status",getParaToInt("status"));
+		article.set("type", getParaToInt("type"));
 		article.set("update_time", format.format(new Date()));
 		
 		article.update();

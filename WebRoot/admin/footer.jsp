@@ -17,7 +17,7 @@
       </div>
       <footer class="templatemo-footer">
         <div class="templatemo-copyright">
-          <p>Copyright &copy; 2084 Huangfude 基于Dashboard主题二次开发 </p>
+          <p>Copyright &copy; 2084 Huangfude 基于Dashboard主题二次开发   <a href="/" target="_blank">查看首页</a></p>
         </div>
       </footer>
     </div>
