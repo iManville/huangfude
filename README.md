@@ -16,7 +16,7 @@ Manville - <iammanville@gmail.com>
 ```
 The MIT License (MIT)
 
-Copyright (c) 2015 Jinmiao Ouyang
+Copyright (c) 2015 Manville Hwang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

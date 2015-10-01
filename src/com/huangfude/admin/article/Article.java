@@ -63,6 +63,24 @@ public class Article extends Model<Article> {
 		}
 		return new Page<Article>(articleList,page.getPageNumber(),page.getPageSize(),page.getTotalPage(),page.getTotalRow());
 	}
+	/**
+	 * 文章搜索
+	 */
+	public Page<Article> searchPaginate(int pageNumber, int pageSize, String keyword) {
+		String sql = "from article order by id desc";
+		if(keyword!=""){
+			sql = "from article where title like '%" +keyword+ "%' or content like '%"+keyword+"%' order by id desc";
+		}
+		Page<Article> page = paginate(pageNumber, pageSize, "select *", sql);
+		List<Article> articleList = new ArrayList<Article>();
+		for (Article article : page.getList()){
+			String content = article.get("content");
+			//removeHTML
+			article.set("content", content.replaceAll("<[^>]*>", " "));
+			articleList.add(article);
+		}
+		return new Page<Article>(articleList,page.getPageNumber(),page.getPageSize(),page.getTotalPage(),page.getTotalRow());
+	}
 
 	/**
 	 * 上一篇
