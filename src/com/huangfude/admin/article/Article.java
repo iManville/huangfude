@@ -48,8 +48,12 @@ public class Article extends Model<Article> {
 	/**
 	 * 用于前台，显示截取内容
 	 */
-	public Page<Article> viewPaginate(int pageNumber, int pageSize) {
-		Page<Article> page = paginate(pageNumber, pageSize, "select *", "from article order by id desc");
+	public Page<Article> viewPaginate(int pageNumber, int pageSize, int folder_id) {
+		String sql = "from article order by id desc";
+		if(folder_id>0){
+			sql = "from article where folder_id = " +folder_id+ " order by id desc";
+		}
+		Page<Article> page = paginate(pageNumber, pageSize, "select *", sql);
 		List<Article> articleList = new ArrayList<Article>();
 		for (Article article : page.getList()){
 			String content = article.get("content");

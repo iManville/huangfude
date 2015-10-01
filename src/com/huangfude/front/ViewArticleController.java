@@ -12,6 +12,7 @@ public class ViewArticleController extends Controller {
 		Article lastArticle = Article.me.getLastArticle(article.getInt("id"),article.getInt("folder_id"));
 		Article nextArticle = Article.me.getNextArticle(article.getInt("id"),article.getInt("folder_id"));
 		setAttr("article", article);
+		setAttr("curFolder_id", article.getInt("folder_id"));
 		setAttr("last_id",lastArticle==null?"":lastArticle.getInt("id"));
 		setAttr("last_title",lastArticle==null?"":lastArticle.getStr("title"));
 		setAttr("next_id",nextArticle==null?"":nextArticle.getInt("id"));

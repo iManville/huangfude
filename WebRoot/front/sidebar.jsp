@@ -11,9 +11,13 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul>
-			<li class="current"><a href="#">技术</a></li>
-			<li><a href="#">所有文章列表</a></li>
+			<li<c:if test="${curFolder_id==0}"> class="current"</c:if>>
+			<a href="/1-0">所有文章列表</a></li>
+			<li<c:if test="${curFolder_id==1}"> class="current"</c:if>>
+			<a href="/1-1">技术</a></li>
+			<!--
 			<li><a href="#">关于我</a></li>
+			-->
 		</ul>
 	</nav>
 
@@ -35,6 +39,7 @@
 	</section>
 
 	<!-- Recent Posts -->
+	<!--
 	<section class="box recent-posts">
 		<header>
 			<h2>标&nbsp;&nbsp;签</h2>
@@ -45,7 +50,7 @@
 			<li><a href="#">Golang</a></li>
 		</ul>
 	</section>
-
+	-->
 	<!-- Copyright -->
 	<ul id="copyright">
 		<li>&copy; Huangfude.</li>

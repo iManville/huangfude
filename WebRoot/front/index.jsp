@@ -55,7 +55,7 @@
 						<c:set var="currentPage" value="${articlePage.pageNumber}" />
 						<c:set var="totalPage" value="${articlePage.totalPage}" />
 						<c:set var="actionUrl" value="/" />
-						<c:set var="urlParas" value="" />
+						<c:set var="urlParas" value="-${curFolder_id}" />
 						<%@ include file="/front/paginate.jsp"%>
 
 				</div>
