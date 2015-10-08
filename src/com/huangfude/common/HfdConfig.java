@@ -4,6 +4,7 @@ import com.huangfude.admin.AdminController;
 import com.huangfude.admin.User;
 import com.huangfude.admin.article.Article;
 import com.huangfude.admin.article.ArticleController;
+import com.huangfude.admin.article.Tags;
 import com.huangfude.admin.folder.Folder;
 import com.huangfude.admin.folder.FolderController;
 import com.huangfude.front.IndexController;
@@ -61,6 +62,7 @@ public class HfdConfig extends JFinalConfig {
 		arp.addMapping("article", Article.class); // 映射article 表到 Article模型
 		arp.addMapping("folder", Folder.class); // 映射folder 表到 Folder模型
 		arp.addMapping("user", User.class);
+		arp.addMapping("tags", Tags.class);
 		
 	}
 	

@@ -47,6 +47,12 @@
                 </div>
               </div>
               <div class="row">
+				<div class="col-md-12 margin-bottom-15">
+                    <label for="title" class="control-label">标签</label>
+                    <input type="text" class="form-control" id="tags" name="tags" value="${tags}">   
+                </div>
+             </div>
+              <div class="row">
                 <div class="col-md-12 margin-bottom-15">
                   <label class="radio-inline">
                     <input type="radio" name="type" value="1" <c:if test="${article.type==1||article.type==null}">checked</c:if>> 原创

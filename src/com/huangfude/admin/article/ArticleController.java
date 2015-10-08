@@ -1,6 +1,7 @@
 package com.huangfude.admin.article;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.aop.Before;
 import com.jfinal.core.Controller;
@@ -38,6 +39,15 @@ public class ArticleController extends Controller {
 	
 	public void edit() {
 		setAttr("article", Article.me.findById(getParaToInt()));
+		String tags = "";
+		List<Tags> taglist = Tags.me.getListByArticleId(getParaToInt());
+		for (Tags tag : taglist) {
+			tags += tag.get("tagname") + ",";
+		}
+		if(tags.indexOf(",")>-1){
+			tags = tags.substring(0,tags.lastIndexOf(","));
+		}
+		setAttr("tags", tags);
 	}
 	
 	@Before(ArticleValidator.class)
