@@ -34,20 +34,25 @@ public class ArticleController extends Controller {
 		article.set("publish_time", format.format(new Date()));
 		
 		article.save();
+		saveTags(article.getInt("id"),getPara("tagsname"));
 		redirect("/admin/article");
 	}
 	
 	public void edit() {
 		setAttr("article", Article.me.findById(getParaToInt()));
-		String tags = "";
+		//整合标签	
+		/*
+		String tagsname = "";
 		List<Tags> taglist = Tags.me.getListByArticleId(getParaToInt());
 		for (Tags tag : taglist) {
-			tags += tag.get("tagname") + ",";
+			tagsname += tag.get("tagname") + ",";
 		}
-		if(tags.indexOf(",")>-1){
-			tags = tags.substring(0,tags.lastIndexOf(","));
+		if(tagsname.indexOf(",")>-1){
+			tagsname = tagsname.substring(0,tagsname.lastIndexOf(","));
 		}
-		setAttr("tags", tags);
+		*/
+		String tagsname = Tags.me.getTagsname(getParaToInt());
+		setAttr("tagsname", tagsname);
 	}
 	
 	@Before(ArticleValidator.class)
@@ -62,13 +67,39 @@ public class ArticleController extends Controller {
 		article.set("update_time", format.format(new Date()));
 		
 		article.update();
+		saveTags(article.getInt("id"),getPara("tagsname"));
 		redirect("/admin/article");
 	}
 	
 	public void delete() {
 		Article.me.deleteById(getParaToInt());
+		Tags.me.deleteByArticleId(getParaToInt());
 		redirect("/admin/article");
 	}
+
+	/*
+	 *保存标签
+	 */
+	public void saveTags(int article_id, String tagsname){
+		//删除原有标签
+		Tags.me.deleteByArticleId(article_id);
+		//保存新标签
+		if(tagsname.indexOf(",")>-1){
+			String[] tagnames = tagsname.split(",");
+			for(int i=0;i<tagnames.length;i++){
+				Tags tags = new Tags();
+				tags.set("tagname",tagnames[i]);
+				tags.set("article_id",article_id);
+				tags.save();
+			}	
+		} else {
+			Tags tags = new Tags();
+			tags.set("tagname",tagsname);
+			tags.set("article_id",article_id);
+			tags.save();
+		}
+	}
+
 }
 
 

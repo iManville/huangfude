@@ -41,6 +41,9 @@
 							<p>
 								${article.content}
 							</p>
+							<p>
+								标签：${tagsname}
+							</p>
 
 							<!-- JiaThis Button BEGIN -->
 							<div class="jiathis_style_24x24">

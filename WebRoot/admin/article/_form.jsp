@@ -49,7 +49,7 @@
               <div class="row">
 				<div class="col-md-12 margin-bottom-15">
                     <label for="title" class="control-label">标签</label>
-                    <input type="text" class="form-control" id="tags" name="tags" value="${tags}">   
+                    <input type="text" class="form-control" id="tagsname" name="tagsname" value="${tagsname}">   
                 </div>
              </div>
               <div class="row">

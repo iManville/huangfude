@@ -3,6 +3,7 @@ package com.huangfude.admin.article;
 import java.util.List;
 
 import com.jfinal.plugin.activerecord.Model;
+import com.jfinal.plugin.activerecord.Db;
 
 /**
  * Tags model.
@@ -26,11 +27,40 @@ public class Tags extends Model<Tags> {
 	public static final Tags me = new Tags();
 	
 	/**
+	 * 获取所有列表
+	 */
+	public List<Tags> getList(){
+		String sql = "select * from tags";
+		return (List<Tags>)Tags.me.find(sql);
+	}
+	/**
 	 * 获取列表
 	 */
 	public List<Tags> getListByArticleId(int article_id){
-		String sql = "select * from tags where article_id=" + article_id;
-		return (List<Tags>)Tags.me.find(sql);
+		String sql = "select * from tags where article_id = ?";
+		return (List<Tags>)Tags.me.find(sql, article_id);
 	}
-	
+	/**
+	 * 标签名
+	 */
+	public String getTagsname(int article_id){
+		String tagsname = "";
+		List<Tags> taglist = getListByArticleId(article_id);
+		for (Tags tag : taglist) {
+			tagsname += tag.get("tagname") + ",";
+		}
+		if(tagsname.indexOf(",")>-1){
+			tagsname = tagsname.substring(0,tagsname.lastIndexOf(","));
+		}
+		return tagsname;
+
+	}
+
+	/*
+	 * 删除标签
+	 */
+	public void deleteByArticleId(int article_id){
+		String sql = "delete from tags where article_id = ?";
+		Db.update(sql,article_id);
+	}	
 }
