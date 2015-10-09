@@ -29,12 +29,13 @@ public class Tags extends Model<Tags> {
 	/**
 	 * 获取所有列表
 	 */
-	public List<Tags> getList(){
-		String sql = "select * from tags";
-		return (List<Tags>)Tags.me.find(sql);
+	public List getListForTagname(){
+		String sql = "select tagname,count(tagname) count from tags group by tagname";
+		return Db.query(sql);
 	}
+
 	/**
-	 * 获取列表
+	 * 根据article_id获取列表
 	 */
 	public List<Tags> getListByArticleId(int article_id){
 		String sql = "select * from tags where article_id = ?";

@@ -39,18 +39,16 @@
 	</section>
 
 	<!-- Recent Posts -->
-	<!--
 	<section class="box recent-posts">
 		<header>
 			<h2>标&nbsp;&nbsp;签</h2>
 		</header>
 		<ul>
-			<li><a href="#">Java</a></li>
-			<li><a href="#">C</a></li>
-			<li><a href="#">Golang</a></li>
+			<c:forEach items="${tagnamelist}" var="item">
+			<li><a href="/tag?tagname=${item[0]}">${item[0]}</a>(${item[1]})</li>
+			</c:forEach>
 		</ul>
 	</section>
-	-->
 	<!-- Copyright -->
 	<ul id="copyright">
 		<li>&copy; Huangfude.</li>

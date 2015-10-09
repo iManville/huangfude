@@ -54,14 +54,7 @@ public class Article extends Model<Article> {
 			sql = "from article where folder_id = " +folder_id+ " order by id desc";
 		}
 		Page<Article> page = paginate(pageNumber, pageSize, "select *", sql);
-		List<Article> articleList = new ArrayList<Article>();
-		for (Article article : page.getList()){
-			String content = article.get("content");
-			//removeHTML
-			article.set("content", content.replaceAll("<[^>]*>", " "));
-			articleList.add(article);
-		}
-		return new Page<Article>(articleList,page.getPageNumber(),page.getPageSize(),page.getTotalPage(),page.getTotalRow());
+		return removeHtml(page);
 	}
 	/**
 	 * 文章搜索
@@ -72,6 +65,20 @@ public class Article extends Model<Article> {
 			sql = "from article where title like '%" +keyword+ "%' or content like '%"+keyword+"%' order by id desc";
 		}
 		Page<Article> page = paginate(pageNumber, pageSize, "select *", sql);
+		return removeHtml(page);
+	}
+	/**
+	 * 根据标签名获取文章列表
+	 */
+	public Page<Article> tagPaginate(int pageNumber, int pageSize, String tagname) {
+		String sql =  "from article where id in (select article_id from tags where tagname=?)";
+		Page<Article> page = paginate(pageNumber, pageSize, "select *", sql,tagname);
+		return removeHtml(page);
+	}	
+	/**
+	 * 去除文章HTML格式
+	 */
+	public Page<Article> removeHtml(Page<Article> page){
 		List<Article> articleList = new ArrayList<Article>();
 		for (Article article : page.getList()){
 			String content = article.get("content");

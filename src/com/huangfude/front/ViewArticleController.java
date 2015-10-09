@@ -22,6 +22,8 @@ public class ViewArticleController extends Controller {
 
 		String tagsname = Tags.me.getTagsname(articleId);
 		setAttr("tagsname",tagsname==null?"":tagsname);
+
+		setAttr("tagnamelist",Tags.me.getListForTagname());
 		render("view_article.jsp");
 	}
 }
