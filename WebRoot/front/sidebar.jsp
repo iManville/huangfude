@@ -15,6 +15,7 @@
 			<a href="/1-0">所有文章列表</a></li>
 			<li<c:if test="${curFolder_id==1}"> class="current"</c:if>>
 			<a href="/1-1">技术</a></li>
+			<li><a href="/front/node.html" target="_blank">Node入门</a></li>
 			<!--
 			<li><a href="#">关于我</a></li>
 			-->
